@@ -7,15 +7,17 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { PostCardComponent } from './layouts/post-card/post-card.component';
+import { AddBlogComponent } from './pages/add-blog/add-blog.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'category', component : SingleCategoryComponent},
   {path : 'post' , component : SinglePostComponent},
+  {path: 'post-card', component: PostCardComponent},
   {path : 'about', component:AboutUsComponent},
   {path : 'contact', component: ContactUsComponent},
   {path: 'term-conditions', component: TermsAndConditionsComponent},
-  {path: 'post-card', component: PostCardComponent}
+  {path:'add-post', component : AddBlogComponent}
 ];
 
 @NgModule({

@@ -30,7 +30,7 @@
         <h2>Latest Posts</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
     </div>
-    <div class="row">
+    <div class="row" *ngFor="let blog of blogList">
         <div class="col-md-4 mt-3">
             <app-post-card></app-post-card>
         </div>

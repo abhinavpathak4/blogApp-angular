@@ -1,0 +1,26 @@
+<div class=" container ">
+    <div class="card mt-5 shadow-effect">
+        <div class="card-body">
+            <form [formGroup]="addPost" (ngSubmit)="savePost()">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" formControlName="title" id="title" class="form-control" placeholder="Enter Title">
+                </div>
+                <div class="form-group">
+                    <label for="Description">Description</label>
+                    <textarea formControlName="description" class="form-control shadow-effect" id="Description" cols="30" rows="10" placeholder="Add your Blog here"></textarea>
+                </div>
+                <div class="form-group">
+                    <select formControlName="category">
+                        <option value="">Select</option>
+                        <option value="Design">Design</option>
+                        <option value="Inspiration">Inspiration</option>
+                        <option value="Politics">Politics</option>
+                        <option value="Sports">Sports</option>
+                    </select>
+                </div>
+                <button [disabled]="!addPost.valid" type="submit" class="btn btn-info btn-theme">Add Blog</button>
+            </form>
+        </div>
+    </div>
+</div>
