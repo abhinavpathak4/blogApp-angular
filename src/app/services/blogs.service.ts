@@ -10,7 +10,6 @@ import { Blog } from '../interfaces/blog';
 export class BlogsService {
 
   constructor(private http : HttpClient) {
-    this.getBlogs();
    }
 
   // add the blog post and later post comments to the post
@@ -24,4 +23,7 @@ export class BlogsService {
     return this.http.get<Blog[]>(environment.GET_BLOGS)
   }
   
+  getBlogById(id : number){
+    return 
+  }
 }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { map, catchError } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { catchError, filter, map } from 'rxjs/operators';
 import { Blog } from 'src/app/interfaces/blog';
 import { BlogsService } from 'src/app/services/blogs.service';
 
@@ -8,27 +8,30 @@ import { BlogsService } from 'src/app/services/blogs.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  blogList : Blog[] = [];
-  constructor(private blogService : BlogsService){}
-  ngOnInit(): void {
-    this.blogService.getBlogs().pipe(
-      map(
-        (response : Blog[]) => {
-          this.blogList = response;
-          console.log(this.blogList);  
-          return response;          
-        }
-      ),
-      catchError((error) => {
-        console.log("api is down");
-        return []; 
-      })
+export class HomeComponent implements OnInit {
+  blogList: Blog[] = [];
+  featuredList: Blog[] = [];
 
+  constructor(private blogService: BlogsService) {}
+
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(): void {
+    this.blogService.getBlogs().pipe(
+      map((response: Blog[]) => {
+        this.blogList = response;
+        console.log(this.blogList);
+        return response;
+      }),
+      catchError((error) => {
+        console.log("API is down");
+        return [];
+      })
     ).subscribe(
-      (data) => {
-        console.log("some error occured");
-      }
-    )
-}
+      () =>
+        this.featuredList = this.blogList.filter((blog: Blog) => blog.featured)
+    );
+  }
 }

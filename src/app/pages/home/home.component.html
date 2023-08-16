@@ -6,18 +6,9 @@
                 <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
 
-            <div class="row">
-                <div class="col-lg-3 ">
-                    <app-post-card></app-post-card>
-                </div>
-                <div class="col-lg-3">
-                    <app-post-card></app-post-card>
-                </div>
-                <div class="col-lg-3 ">
-                    <app-post-card></app-post-card>
-                </div>
-                <div class="col-lg-3">
-                    <app-post-card></app-post-card>
+            <div class="row" *ngIf="blogList">
+                <div class="col-lg-3" *ngFor="let blog of featuredList">               
+                    <app-post-card [blog]="blog"></app-post-card>           
                 </div>
             </div>
         </div>
@@ -30,24 +21,10 @@
         <h2>Latest Posts</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
     </div>
-    <div class="row" *ngFor="let blog of blogList">
-        <div class="col-md-4 mt-3">
-            <app-post-card></app-post-card>
+    <ng-container *ngIf="blogList">
+    <div class="row" >
+        <div class="col-md-4 mt-3" *ngFor="let blog of blogList">
+            <app-post-card [blog]="blog"></app-post-card>
         </div>
-        <div class="col-md-4 mt-3">
-            <app-post-card></app-post-card>
-        </div>
-        <div class="col-md-4 mt-3">
-            <app-post-card></app-post-card>
-        </div>
-        <div class="col-md-4 mt-3">
-            <app-post-card></app-post-card>
-        </div>
-        <div class="col-md-4 mt-3">
-            <app-post-card></app-post-card>
-        </div>
-        <div class="col-md-4 mt-3">
-            <app-post-card></app-post-card>
-        </div>
-    </div>
+    </div></ng-container>
 </section>
