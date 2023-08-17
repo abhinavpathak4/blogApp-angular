@@ -1,6 +1,5 @@
 <div class="card">
-    <img (click)="singlePost(blog)" src="/assets/card-img1.jpg" alt="post-image" class="card-img-top">
-
+    <img (click)="navigateToSinglePost(blog)" src="/assets/card-img1.jpg" alt="post-image" class="card-img-top">
     <div class="card-body shadow-effect">
         <ng-container *ngIf="blog">
         <small class="bg-light text-danger text-center ">{{blog.category}}</small>
@@ -11,5 +10,5 @@
         <p>{{blog.description}}</p>
     </ng-container>
     </div>
-    <small class="bg-light text-warning text-center ml-3"> LAST UPDATED - AUG 03, 2023</small>
+    <small class="bg-light text-warning text-center ml-3"> LAST UPDATED - {{date | date}}</small>
 </div>

@@ -5,7 +5,6 @@
                 <h2 class="text-white">Featured Posts</h2>
                 <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
-
             <div class="row" *ngIf="blogList">
                 <div class="col-lg-3" *ngFor="let blog of featuredList">               
                     <app-post-card [blog]="blog"></app-post-card>           

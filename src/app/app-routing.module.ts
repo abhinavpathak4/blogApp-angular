@@ -12,7 +12,7 @@ import { AddBlogComponent } from './pages/add-blog/add-blog.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'category', component : SingleCategoryComponent},
-  {path : 'post' , component : SinglePostComponent},
+  {path : 'post/:blog' , component : SinglePostComponent},
   {path: 'post-card', component: PostCardComponent},
   {path : 'about', component:AboutUsComponent},
   {path : 'contact', component: ContactUsComponent},

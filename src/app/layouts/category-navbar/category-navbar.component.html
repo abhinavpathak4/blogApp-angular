@@ -2,10 +2,11 @@
     <div class="container">
         <div class="collapse navbar-collapse justify-content-center">
             <ul class="navbar-nav">
-                <li class="nav-item ml-3"><a class="nav-link" href="">Design</a></li>
-                <li class="nav-item ml-3"><a class="nav-link" href="">Inspiration</a></li>
-                <li class="nav-item ml-3"><a class="nav-link" href="">Sports</a></li>
-                <li class="nav-item me-3"><a class="nav-link" href="">Politics</a></li>
+                <li class="nav-item me-5"><a class="nav-link"  routerLink="">Home</a></li>
+                <li class="nav-item ml-3"><a class="nav-link" (click)="setCategory('Business')" routerLink="category">Design</a></li>
+                <li class="nav-item ml-3"><a class="nav-link" (click)="setCategory('Inspiration')" routerLink="category">Inspiration</a></li>
+                <li class="nav-item ml-3"><a class="nav-link" (click)="setCategory('Sports')" routerLink="category">Sports</a></li>
+                <li class="nav-item me-3"><a class="nav-link" (click)="setCategory('Politics')" routerLink="category">Politics</a></li>
                 <li class="nav-item ms-5"><a class="nav-link" routerLink="/add-post">Add Post</a></li>
             </ul>
         </div>

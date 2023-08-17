@@ -33,7 +33,7 @@ export class AddBlogComponent implements OnInit {
       featured : false
     }
     this.blogService.addBlogPost(singleBlog).subscribe(
-      (data) => console.log(data)
+      (data) => console.log(data.body)
     );
     this.addPost.reset();  
   }

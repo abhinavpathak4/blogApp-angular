@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { catchError, filter, map } from 'rxjs/operators';
 import { Blog } from 'src/app/interfaces/blog';
 import { BlogsService } from 'src/app/services/blogs.service';
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   blogList: Blog[] = [];
   featuredList: Blog[] = [];
 
-  constructor(private blogService: BlogsService) {}
+  constructor(private blogService: BlogsService, private router : Router) {}
 
   ngOnInit(): void {
     this.getData();
